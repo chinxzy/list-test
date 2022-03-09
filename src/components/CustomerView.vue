@@ -1,15 +1,13 @@
 <template>
   <div class="about container">
     <div>
-      <AlertMessage v-if="alert" :message="alert" />
-      <h1 style="margin-bottom: 1em">Manage Customers</h1>
       <table class="table table-striped">
-        <thead>
-        </thead>
         <tbody>
           <tr v-for="list in lists" :key="list.id">
-            <td>{{ customer.name }}</td>
-            <td>#{{ customer.id }}</td>
+            <td>
+              <div class="d-flex justify-content-start">{{ list.name }}</div>
+              <div class="d-flex justify-content-start"># {{ list.id }}</div>
+            </td>
             <td><button class="btn">view</button></td>
           </tr>
         </tbody>

@@ -30,14 +30,14 @@ const customers: Module<State, Rootstate> = {
       state.item = item;
     },
     [MutationTypes.AddItems](state: State, item: list) {
-      state.item;
+      state.item.unshift(item);
     },
   },
 
   actions: {
     async getCustomers({ commit }: { commit: Commit }) {
       try {
-        const { data } = await axios.get("http://localhost:3000/list");
+        const { data } = await axios.get("https://my-json-server.typicode.com/chinxzy/lists/list");
         commit(MutationTypes.SetItems, data);
         
       } catch (e) {
@@ -47,7 +47,7 @@ const customers: Module<State, Rootstate> = {
     async AddCustomers({ commit }: { commit: Commit }, payload: list[]) {
       try {
         const { data } = await axios.post(
-          "http://localhost:3000/list",
+          "https://my-json-server.typicode.com/chinxzy/lists/list",
           payload
         );
         commit(MutationTypes.AddItems, data);

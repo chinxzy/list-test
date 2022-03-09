@@ -1,14 +1,17 @@
 <template>
+  <add-customer />
   <customer-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import CustomerView from "../components/CustomerView.vue";
+import AddCustomer from "../components/AddCustomer.vue";
 import { useStore } from "../store/index";
 
 export default defineComponent({
   components: {
+    AddCustomer,
     CustomerView,
   },
   setup() {
@@ -16,6 +19,6 @@ export default defineComponent({
     console.log(store);
     store.dispatch("list/getCustomers");
   },
-})
+});
 </script>
 
