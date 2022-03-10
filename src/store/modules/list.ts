@@ -9,6 +9,7 @@ import { RouterLink, useRouter } from "vue-router";
 export interface list {
   id?: number;
   name: string;
+  time: string;
 }
 
 export interface State {

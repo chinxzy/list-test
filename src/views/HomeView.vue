@@ -1,5 +1,4 @@
 <template>
-  <add-customer />
   <customer-view />
 </template>
 
@@ -11,7 +10,6 @@ import { useStore } from "../store/index";
 
 export default defineComponent({
   components: {
-    AddCustomer,
     CustomerView,
   },
   setup() {
